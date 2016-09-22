@@ -24,7 +24,7 @@ activate :directory_indexes
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-  # blog.prefix = "/riot_test"
+  blog.prefix = "/riot_test"
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
