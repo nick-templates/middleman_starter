@@ -14,13 +14,13 @@
     <link rel="alternate" href="http://blog.url.com/articles/2016/09/22/hello-world/"/>
     <id>http://blog.url.com/articles/2016/09/22/hello-world/</id>
     <published>2016-09-21T17:00:00-07:00</published>
-    <updated>2016-09-22T09:13:49-07:00</updated>
+    <updated>2016-09-22T09:16:17-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
     <content type="html">&lt;p&gt;This is the first post of my new tech blizzy.   I wanted to put up this site to start farting around with HTML5 and ES5 ES6 and beyond!&lt;/p&gt;
 
-&lt;p&gt;Additionally I hope  to  post issues I've run across and  how I dealt with them or solutions I discovered to hopefully save future viewers time.&lt;/p&gt;
+&lt;p&gt;Additionally I hope  to  post issues I've run across and  how I dealt with them or solutions I discovered to hopefully save future viewers headaches.&lt;/p&gt;
 
 &lt;p&gt;My next post will be a rundown on the tech behind this seemingly simple blog.  (Cough cough static site generator plus web components).&lt;/p&gt;
 
