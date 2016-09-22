@@ -15,4 +15,4 @@ Additionally I hope  to  post issues I've run across and  how I dealt with them 
 My next post will be a rundown on the tech behind this seemingly simple blog and some of the issues I ran across.  (Cough cough static site generator plus web components).
 
 
-Lets move into the future together: technologically, intellectually, emotionally, intimately, but mostly hungrily.
+Lets move into the future together: technologically, intellectually, emotionally, intimately, but mostly tiredly.
