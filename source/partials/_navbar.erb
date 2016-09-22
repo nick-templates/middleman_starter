@@ -1,0 +1,53 @@
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>        
+
+
+
+            <a class="navbar-brand" href="<%= config[:host_prefix] %>/">
+              <delayed-class delay="2500" addclass="glyphicon glyphicon-tree-deciduous"></delayed-class>
+              <baffle-tag time="1000" delay="0" text="Welcome to Mutant.city!"></baffle-tag>
+            </a>
+      </div>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="<%= config[:host_prefix] %>/blog">
+            <span class="glyphicon glyphicon-filter"></span>
+            <span>Blog</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<%= config[:host_prefix] %>/aboot">
+            <span class="glyphicon glyphicon-user"></span>
+            <span>Aboot</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<%= config[:host_prefix] %>/portfolio">
+              <span class="glyphicon glyphicon-fire"></span>
+            <span>Portfolio</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<%= config[:host_prefix] %>/links">
+            <span class="glyphicon glyphicon-star"></span>
+            <span>Favs</span>
+          </a>
+        </li>
+      </ul>
+
+    </div><!--/.navbar-collapse-->
+  </div><!--/.container-fluid-->
+</nav>

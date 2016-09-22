@@ -24,13 +24,13 @@ activate :directory_indexes
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-  blog.prefix = "/riot_test"
+  # blog.prefix = "/riot_test"
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.sources = "articles/{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "single_page_layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -48,6 +48,8 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", layout: false
+# page "/articles/*", layout: "single_page_layout"
+
 # Reload the browser automatically whenever files change
 # configure :development do
 #   activate :livereload
@@ -64,7 +66,8 @@ page "/feed.xml", layout: false
 configure :build do
   # Minify CSS on build
   # activate :minify_css
-
+  set :build_dir, 'docs'
   # Minify Javascript on build
   # activate :minify_javascript
+  config[:host_prefix] = "/riot_test"
 end

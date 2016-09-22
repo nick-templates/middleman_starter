@@ -1,0 +1,347 @@
+
+<p><a href="http://riotjs.com/"><img src="http://riotjs.com/img/logo/riot480x.png" alt="Riot logo" /></a></p>
+
+<h2 id="a-react-like-user-interface-micro-library">A React-like user interface micro-library</h2>
+
+<p><a href="https://travis-ci.org/riot/riot"><img src="https://img.shields.io/travis/riot/riot.svg?style=flat-square" alt="Build Status" /></a>
+<a href="http://riotjs.com/forum/"><img src="https://img.shields.io/badge/muut-JOIN_CHAT%E2%86%92-ff0044.svg?style=flat-square" alt="Riot Forum" /></a>
+<a href="https://gitter.im/riot/riot?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://img.shields.io/badge/GITTER-JOIN_CHAT_%E2%86%92-1dce73.svg?style=flat-square" alt="Join the chat at https://gitter.im/riot/riot" /></a></p>
+
+<p><a href="https://npmjs.org/package/riot"><img src="http://img.shields.io/npm/v/riot.svg?style=flat-square" alt="NPM version" /></a>
+<a href="https://npmjs.org/package/riot"><img src="http://img.shields.io/npm/dm/riot.svg?style=flat-square" alt="NPM downloads" /></a>
+<a href="/assets/vendor/riot/LICENSE.txt"><img src="http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square" alt="MIT License" /></a>
+<a href="https://coveralls.io/r/riot/riot?branch=dev"><img src="https://img.shields.io/coveralls/riot/riot/dev.svg?style=flat-square" alt="Coverage Status" /></a>
+<a href="https://codeclimate.com/github/riot/riot"><img src="https://img.shields.io/codeclimate/github/riot/riot.svg?style=flat-square" alt="Code Quality" /></a></p>
+
+<p><a href="https://saucelabs.com/u/testsriotjs"><img src="https://saucelabs.com/browser-matrix/testsriotjs.svg?1" alt="Sauce Test Status" /></a></p>
+
+<h3 id="framework-size-comparison">Framework Size Comparison</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Framework</th>
+      <th>Version</th>
+      <th>Minified Size (gzip)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Angular2</td>
+      <td>2.0.0-beta.17</td>
+      <td>125.29kb</td>
+    </tr>
+    <tr>
+      <td>Ember</td>
+      <td>2.7.1</td>
+      <td>112.58kb</td>
+    </tr>
+    <tr>
+      <td>Angular</td>
+      <td>1.5.8</td>
+      <td>56.28kb</td>
+    </tr>
+    <tr>
+      <td>Polymer + Web Components Polyfill Lite</td>
+      <td>1.6.1</td>
+      <td>58.08kb</td>
+    </tr>
+    <tr>
+      <td>React</td>
+      <td>15.3.1</td>
+      <td>44.32kb</td>
+    </tr>
+    <tr>
+      <td>Web Components Polyfill</td>
+      <td>0.7.22</td>
+      <td>33.66kb</td>
+    </tr>
+    <tr>
+      <td>Vue</td>
+      <td>1.0.26</td>
+      <td>26.66kb</td>
+    </tr>
+    <tr>
+      <td>Vue</td>
+      <td>2.0.0-rc.2</td>
+      <td>22.71kb</td>
+    </tr>
+    <tr>
+      <td>Riot</td>
+      <td>2.6.2</td>
+      <td>9.35kb</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="custom-tags--concise-syntax--virtual-dom--full-stack">Custom tags • Concise syntax • Virtual DOM • Full stack</h3>
+
+<p>Riot brings custom tags to all modern browsers. Think React + Polymer but with enjoyable syntax and a small learning curve.</p>
+
+<h4 id="tag-definition">Tag definition</h4>
+
+<p>``` javascript</p>
+<timer>
+
+  <p>Seconds Elapsed: { time }</p>
+
+  this.time = opts.start || 0
+
+  tick() {
+    this.update({ time: ++this.time })
+  }
+
+  var timer = setInterval(this.tick, 1000)
+
+  this.on('unmount', function() {
+    clearInterval(timer)
+  })
+
+</timer>
+<p>```</p>
+
+<p><a href="http://riotjs.com/examples/plunker/?app=timer">Open this example on Plunker</a></p>
+
+<h4 id="mounting">Mounting</h4>
+
+<p><code>javascript
+riot.mount('timer', { start: 0 })
+</code></p>
+
+<h4 id="nesting">Nesting</h4>
+
+<p>Custom tags lets you build complex views with HTML.</p>
+
+<p>``` html</p>
+<timetable>
+  <timer start="0"></timer>
+  <timer start="10"></timer>
+  <timer start="20"></timer>
+</timetable>
+<p>```</p>
+
+<p>HTML syntax is the de facto language on the web and it's designed for building user interfaces. The syntax is explicit, nesting is inherent to the language and attributes offer a clean way to provide options for custom tags.</p>
+
+<h3 id="virtual-dom">Virtual DOM</h3>
+<ul>
+  <li>Absolutely the smallest possible amount of DOM updates and reflows.</li>
+  <li>One way data flow: updates and unmounts are propagated downwards from parent to children.</li>
+  <li>Expressions are pre-compiled and cached for high performance.</li>
+  <li>Lifecycle events for more control.</li>
+</ul>
+
+<h3 id="close-to-standards">Close to standards</h3>
+<ul>
+  <li>No proprietary event system.</li>
+  <li>Event normalization.</li>
+  <li>The rendered DOM can be freely manipulated with other tools.</li>
+  <li>No extra HTML root elements or <code>data-</code> attributes.</li>
+  <li>Plays well with jQuery.</li>
+</ul>
+
+<h3 id="use-your-dearest-language-and-tools">Use your dearest language and tools</h3>
+<ul>
+  <li>Create tags with CoffeeScript, Jade, LiveScript, Typescript, ES6 or <a href="http://riotjs.com/guide/compiler/#pre-processors">any pre-processor</a> you want.</li>
+  <li>Integrate with NPM, CommonJS, AMD, Bower or Component</li>
+  <li>Develop with <a href="https://github.com/e-jigsaw/gulp-riot">Gulp</a>, <a href="https://github.com/ariesjia/grunt-riot">Grunt</a>, <a href="https://github.com/jhthorsen/riotify">Browserify</a>, or <a href="https://github.com/collingreen/wintersmith-riot">Wintersmith</a> plugins</li>
+</ul>
+
+<h3 id="cdn-hosting">CDN hosting</h3>
+<ul>
+  <li><a href="http://www.jsdelivr.com/projects/riot">jsDelivr</a></li>
+  <li><a href="https://cdnjs.com/libraries/riot">cdnjs</a></li>
+</ul>
+
+<h3 id="concise-syntax">Concise syntax</h3>
+<ul>
+  <li>Power shortcuts: <code>class={ enabled: is_enabled, hidden: hasErrors() }</code>.</li>
+  <li>No extra brain load such as <code>render</code>, <code>state</code>, <code>constructor</code> or <code>shouldComponentUpdate</code></li>
+  <li>Interpolation: <code>Add #{ items.length + 1 }</code> or <code>class="item { selected: flag }"</code></li>
+  <li>Compact ES6 method syntax.</li>
+</ul>
+
+<h3 id="demos">Demos</h3>
+<ul>
+  <li><a href="https://github.com/riot/examples"><strong>Riot Examples</strong> - Community's Official</a></li>
+  <li><a href="http://todomvc.com/examples/riotjs/">Riot Todo MVC</a></li>
+  <li><a href="http://git.io/riot-hn">Hackernews reader</a></li>
+  <li><a href="https://github.com/txchen/feplay/tree/gh-pages/riot_vue">Vuejs examples by Riotjs</a></li>
+  <li><a href="https://github.com/srackham/riot-todo">Flux-like ES6 Todo</a></li>
+  <li><a href="http://jsfiddle.net/gnumanth/h9kuozp5/">Timer</a></li>
+  <li><a href="http://txchen.github.io/feplay/riot_flux">Another flux demo comparable to React ones</a></li>
+  <li><a href="http://richardbondi.net/programming/riot">Various experiments</a></li>
+  <li><a href="https://github.com/ListnPlay/riot-isomorphic">Isomorphic application</a></li>
+  <li><a href="https://github.com/PabloSichert/isomorphic-proof-of-concept">Isomorphic proof of concept</a></li>
+  <li><a href="http://mingliangfeng.me/flux-riot">flux-riot todo</a></li>
+  <li><a href="http://nippur72.github.io/riotjs-todomvc/#/">Another Riot Todo MVC</a></li>
+  <li><a href="https://github.com/cheft/cheft">Cheft isomorphic by express</a></li>
+  <li><a href="https://github.com/mike-ward/electron-riot">electron-riot - Riot in an electron application</a></li>
+  <li><a href="https://github.com/revington/frontend-boilerplate">An express, riot, jade, webpack simple boilerplate</a></li>
+  <li><a href="https://github.com/vitogit/riot.js-vs-react.js-comment-box">Riot.js vs React.js comparison of a simple comment box</a></li>
+</ul>
+
+<h3 id="tutorials">Tutorials</h3>
+<ul>
+  <li><a href="http://blog.srackham.com/posts/riot-es6-webpack-apps/">Building Apps with Riot, ES6 and Webpack</a></li>
+  <li><a href="https://github.com/txchen/feplay/tree/gh-pages/riot_webpack">Building Apps with Riot, Babel, RiotControl and Webpack</a></li>
+  <li><a href="http://robertwpearce.com/blog/riotjs-example.html">Building tabs with Riot</a></li>
+  <li><a href="https://juriansluiman.nl/article/154/the-react-tutorial-for-riot">The "React tutorial" for Riot</a></li>
+  <li><a href="https://github.com/ivan-saorin/riot-tutorial-tags-pack-app">How to package "tag libraries" in Riot</a></li>
+  <li><a href="https://github.com/viliamjr/commentsTuto">Another React tutorial with Riot</a></li>
+  <li><a href="http://www.triplet.fi/blog/riot-custom-tag-by-example/">Riot Custom Tag by Example</a></li>
+  <li><a href="http://www.triplet.fi/blog/riot-compiler-explained/">Riot Compiler Explained</a></li>
+  <li><a href="http://www.triplet.fi/blog/adding_compiled_riot_tags_to_your_gulp_browserify_build/">Adding compiled Riot tags to your Gulp + Browserify build</a></li>
+  <li><a href="http://www.marcusoft.net/2015/12/riotjs-anatomy-of-a-tag.html">The anatomy of a tag - a primer tutorial</a></li>
+  <li><a href="http://vitomd.com/blog/coding/tutorial_tdd_riot_mocha/">Using TDD with Riot+mocha+chai</a></li>
+  <li><a href="http://happy-css.com/lessons/riotjs/">The Basics - from ground up to connected tag-networks</a></li>
+</ul>
+
+<h3 id="video-tutorials">Video Tutorials</h3>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=al87U6NgRTc">Introduction</a></li>
+  <li><a href="https://www.youtube.com/watch?v=T-ZV9dv93sw">Loops, Events and Callbacks</a></li>
+  <li><a href="http://youtu.be/6ww1UXGJzcs">Server Rendering with Node &amp; Express</a></li>
+  <li><a href="https://youtu.be/UgdZbT-KPpY">Riot And Webpack Setup</a></li>
+  <li><a href="https://youtu.be/Y6vpKAGT2-8">Riot and Redux - Part 1</a></li>
+  <li><a href="https://youtu.be/DgM03bvgCYc">Riot and Redux - Part 2</a></li>
+  <li><a href="https://youtu.be/QuwnbuneAzM">Riot and Redux - Part 3</a></li>
+  <li><a href="https://youtu.be/qc6bjtu7KG0">Riot and Redux - Part 4</a></li>
+  <li><a href="https://youtu.be/M4BNsRMatVY">Riot and Redux - Part 5</a></li>
+  <li><a href="https://youtu.be/jr8KDpwtRsk">Riot and Redux - Part 6</a></li>
+</ul>
+
+<h3 id="libraries--frameworks">Libraries / Frameworks</h3>
+<ul>
+  <li><a href="https://github.com/jimsparkman/RiotControl">Flux- like event controller for Riot</a></li>
+  <li><a href="https://github.com/luisvinicius167/riotux">riotux - Simple Event Contoller for Riot.js</a></li>
+  <li><a href="https://github.com/mingliangfeng/flux-riot">flux-riot framework</a></li>
+  <li><a href="https://github.com/cheft/cheftjs">Cheftjs - chinese framework for Riot</a></li>
+  <li><a href="https://www.npmjs.com/package/veronica-x">Veronica - flux adaption for Riot</a></li>
+</ul>
+
+<h3 id="components">Components</h3>
+<ul>
+  <li><a href="http://kysonic.github.io/riot-mui/">Material UI</a></li>
+  <li><a href="https://riotgear.js.org">RiotGear Components</a></li>
+  <li><a href="http://riotgear.js.org/components/router/">RiotGear Router</a></li>
+  <li><a href="http://cognitom.github.io/riot-bootstrap/">Riot Bootstrap</a></li>
+  <li><a href="https://github.com/BE-FE/iToolkit">iToolkit</a></li>
+  <li><a href="https://github.com/crisward/riot-routehandler">Riot Routehandler</a>-<a href="http://codepen.io/crisward/pen/xwGJpM?editors=101">(Demo)</a></li>
+  <li><a href="https://github.com/crisward/riot-flipcard">Riot Flipcard</a> - <a href="https://crisward.github.io/riot-flipcard/">(Demo)</a></li>
+  <li><a href="https://github.com/crisward/riot-grid">Riot Grid</a> - <a href="http://codepen.io/crisward/pen/rxepMX?editors=101">(Demo)</a></li>
+  <li><a href="https://github.com/txchen/eslint-plugin-riot">ESLint Riot Plugin</a></li>
+  <li><a href="https://github.com/sartaj/riot-animate">riot-animate</a></li>
+  <li><a href="https://github.com/fengzilong/Nest">Nest UI</a> - <a href="https://fengzilong.github.io/Nest/">(Demo)</a></li>
+</ul>
+
+<h3 id="resources">Resources</h3>
+<ul>
+  <li><a href="https://github.com/lucasbrigida/angular-riot">Riot + AngularJS</a></li>
+  <li><a href="https://www.npmjs.com/package/riotjs-loader">Module loader for WebPack</a></li>
+  <li><a href="https://atmospherejs.com/baysao/riotjs">Riot + Meteor</a></li>
+  <li><a href="http://cdn.rawgit.com/atian25/blog/master/assets/riot-snake.html">Riot Snake Game</a></li>
+  <li><a href="http://cognitom.github.io/riot-checker/">Riot Tag Syntax Checker</a></li>
+  <li><a href="https://github.com/Centaur/riotjs_doc_cn">Riot 文档中译版</a> :cn:</li>
+  <li><a href="https://github.com/collingreen/wintersmith-riot">Riot + Wintersmith</a></li>
+  <li><a href="https://github.com/Power-Inside/lineman-riot">Riot precompiler plugin for lineman</a></li>
+  <li><a href="https://github.com/wbkd/riotjs-startkit">Riot Startkit - Flux inspired skeleton app + WebPack + PostCSS</a></li>
+  <li><a href="https://www.npmjs.com/package/generator-riot-mobile">Yeoman generator - Generator riot mobile</a></li>
+  <li><a href="https://www.npmjs.com/package/generator-riot-element">Yeoman generator - Generator riot element</a></li>
+  <li><a href="https://github.com/nippur72/RiotTS">Riot for TypeScript</a></li>
+  <li><a href="https://github.com/amenadiel/requirejs-riot">Riot loader plugin for RequireJS</a></li>
+  <li><a href="https://github.com/amenadiel/systemjs-riot">Riot loader plugin for JSPM/SystemJS</a></li>
+  <li><a href="https://github.com/voorhoede/riotjs-style-guide">RiotJS Style Guide</a></li>
+  <li><a href="http://martinmuzatko.github.io/riot-cheatsheet/">Riot Cheatsheet</a></li>
+</ul>
+
+<h3 id="performance">Performance</h3>
+<ul>
+  <li><strong>Riot vs React performance:</strong> <a href="https://github.com/kazzkiq/samples/tree/gh-pages/perf/dom-riot-vs-vanilla">(Riot version)</a> vs <a href="https://github.com/kazzkiq/samples/tree/gh-pages/perf/dom-react-vs-vanilla">(React version)</a></li>
+</ul>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+<ul>
+  <li><a href="http://www.triplet.fi/blog/q-and-a-with-riotjs-author-tero-piirainen/">Q&amp;A with RiotJS author Tero Piirainen</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/riot-detector/cnnmjeggdmicjojlnjghdgkdlijiobke">riot-detector (Chrome Extension)</a></li>
+</ul>
+
+<h3 id="editors--editor-plugins-syntax-highlighting-autcompletion-etc">Editors / Editor Plugins (Syntax highlighting, autcompletion, etc…)</h3>
+<ul>
+  <li><a href="https://atom.io/packages/riot">riot (Atom Package)</a></li>
+  <li><a href="https://github.com/dekimasoon/language-riot-tag">language-riot-tag (Atom Package)</a>
+    <ul>
+      <li>Based on Vue's official Sublime Text highlighter</li>
+      <li>Note: Designed for html, not jade.</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/crisward/sublime-tag">sublime-tag (Sublime Text)</a></li>
+  <li><a href="https://github.com/crisward/riot-tag">riot-tag (Visual Studio)</a></li>
+  <li><a href="http://web-mode.org">web-mode (Emacs)</a>
+    <ul>
+      <li>See how to configure <a href="https://github.com/riot/riot/issues/1967">#1967</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="how-to-contribute">How to contribute</h3>
+
+<p>If you are reading this it's already a good sign and we are thankful for it! We try our best working as much as we could on riot but your help is always appreciated.</p>
+
+<p>If you want to contribute to riot helping us maintaining the project please check first the list of <a href="https://github.com/riot/riot/issues">our open issues</a> to understand whether there is a task where you could help.</p>
+
+<p>Riot is mainly developed on UNIX systems so you will be able to run all the commands necessary to build and test the library using our <a href="Makefile">Makefile</a>. If you are on a Microsoft machine it could be harder to set up you development environment properly.</p>
+
+<p>Following the steps below you should be able to properly submit your patch to the project</p>
+
+<h4 id="clone-the-repo-and-browse-to-the-riot-folder">1) Clone the repo and browse to the riot folder</h4>
+
+<p><code>shell
+$ git clone git@github.com:riot/riot.git &amp;&amp; cd riot
+</code>
+#### 2) Set up your git branch</p>
+
+<p><code>shell
+$ git checkout -b feature/my-awesome-patch
+</code></p>
+
+<h4 id="install-the-npm-dependencies">3) Install the npm dependencies</h4>
+
+<p><code>shell
+$ npm i
+</code></p>
+
+<h4 id="build-and-test-riot-using-the-makefile">4) Build and test riot using the Makefile</h4>
+
+<p>```shell
+# To build and test riot
+$ make riot</p>
+
+<h1 id="to-build-without-testing">To build without testing</h1>
+<p>$ make raw</p>
+
+<h1 id="to-build-anytime-you-change-a-src-file">To build anytime you change a src file</h1>
+<p>$ make watch</p>
+
+<h1 id="to-bench-riot--it-requires-ctrlc-to-exit-">To bench riot ( it requires ctrl+c to exit )</h1>
+<p>$ make perf
+```</p>
+
+<h4 id="pull-request-only-against-the-dev-branch-making-sure-you-have-read-our-pull-request-templategithubpullrequesttemplatemd">5) Pull request only against the <code>dev</code> branch making sure you have read <a href=".github/PULL_REQUEST_TEMPLATE.md">our pull request template</a></h4>
+
+<h4 id="be-patient">6) Be patient</h4>
+
+<h3 id="credits">Credits</h3>
+
+<p>Riot is made with :heart: by many smart people from all over the world. Thanks to all the contributors<br />
+It's actively maintained by:
+ - <a href="https://github.com/rsbondi">Richard Bondi</a>
+ - <a href="https://github.com/GianlucaGuarini">Gianluca Guarini</a>
+ - <a href="https://github.com/cognitom">Tsutomu Kawamura</a>
+ - <a href="https://github.com/aMarCruz">Alberto Martínez</a>
+ - <a href="https://github.com/tipiirai">Tero Piirainen</a></p>
+
+<h3 id="buy-us-a-coffee-coffee">Buy us a coffee :coffee:</h3>
+<p><a href="https://pledgie.com/campaigns/31139"><img src="https://pledgie.com/campaigns/31139.png?skin_name=chrome" alt="Click here to lend your support to: Riot and make a donation at pledgie.com !" /></a></p>
+
+<p>http://riotjs.com/</p>
+

@@ -8,9 +8,9 @@
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="<%= config[:host_prefix] %>/assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%= config[:host_prefix] %>/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%= config[:host_prefix] %>/assets/css/main.css">
   </head>
   <body>
 
@@ -20,18 +20,18 @@
 
 
      <!-- other libs -->
-    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/vendor/baffle/dist/baffle.min.js"></script>
+    <script src="<%= config[:host_prefix] %>/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="<%= config[:host_prefix] %>/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<%= config[:host_prefix] %>/assets/vendor/baffle/dist/baffle.min.js"></script>
 
     <!--My JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="<%= config[:host_prefix] %>/assets/js/main.js"></script>
 
     <!-- Riot  related scripts/tags -->
-    <script src="assets/components/test-tag.js" type="riot/tag"></script>
-    <script src="assets/components/baffle-tags.js" type="riot/tag"></script>
+    <script src="<%= config[:host_prefix] %>/assets/components/test-tag.js" type="riot/tag"></script>
+    <script src="<%= config[:host_prefix] %>/assets/components/baffle-tags.js" type="riot/tag"></script>
 
-    <script src="assets/vendor/riot/riot+compiler.min.js"></script>
+    <script src="<%= config[:host_prefix] %>/assets/vendor/riot/riot+compiler.min.js"></script>
 
     <!-- mount normally -->
     <script>
