@@ -21,13 +21,15 @@
 <!-- This text is slowly revealed baffle style.  
 Can tinker with the settings using reveal_time and delay_to_reveal -->
 <baffle-tag>
-	<span id="{ uniq_id }">░▒▒▒░░</span>
+
+		<span id="{ uniq_id }">░▒▒▒░░</span>
 
 	<script>
 
 	this.uniq_id = randomCSSid(32);
 	this.reveal_time = parseInt(opts.time) || 9000;
 	this.delay_to_reveal= parseInt(opts.delay) || 2000;
+	this.style = opts.style
 
 	s=["█","▓","▒","░","█","▓","▒","░","█","▓","▒","░","<",">","/"]
 
