@@ -1,16 +1,16 @@
     <aside>
       <h2>Recent Articles</h2>
       <ol>
-          <li><a href="/articles/2012/01/01/example-article/">Example Article</a> <span>Jan  1</span></li>
+          <li><a href="/articles/2016/09/22/hello-world/">Hello World</a> <span>Sep 22</span></li>
       </ol>
 
       <h2>Tags</h2>
       <ol>
-          <li><a href="/tags/example/">example (1)</a></li>
+          <li><a href="/tags/first_entry/">first_entry (1)</a></li>
       </ol>
 
       <h2>By Year</h2>
       <ol>
-          <li><a href="/2012/">2012 (1)</a></li>
+          <li><a href="/2016/">2016 (1)</a></li>
       </ol>
     </aside>

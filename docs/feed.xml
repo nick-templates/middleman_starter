@@ -5,20 +5,26 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2011-12-31T16:00:00-08:00</updated>
+  <updated>2016-09-21T17:00:00-07:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>Example Article</title>
-    <link rel="alternate" href="http://blog.url.com/articles/2012/01/01/example-article/"/>
-    <id>http://blog.url.com/articles/2012/01/01/example-article/</id>
-    <published>2011-12-31T16:00:00-08:00</published>
-    <updated>2016-09-21T18:25:40-07:00</updated>
+    <title>Hello World</title>
+    <link rel="alternate" href="http://blog.url.com/articles/2016/09/22/hello-world/"/>
+    <id>http://blog.url.com/articles/2016/09/22/hello-world/</id>
+    <published>2016-09-21T17:00:00-07:00</published>
+    <updated>2016-09-22T09:13:49-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
+    <content type="html">&lt;p&gt;This is the first post of my new tech blizzy.   I wanted to put up this site to start farting around with HTML5 and ES5 ES6 and beyond!&lt;/p&gt;
+
+&lt;p&gt;Additionally I hope  to  post issues I've run across and  how I dealt with them or solutions I discovered to hopefully save future viewers time.&lt;/p&gt;
+
+&lt;p&gt;My next post will be a rundown on the tech behind this seemingly simple blog.  (Cough cough static site generator plus web components).&lt;/p&gt;
+
+&lt;p&gt;Lets move into the future together: technologically, intellectually, emotionally, intimately, but mostly hungrily.&lt;/p&gt;
 </content>
   </entry>
 </feed>

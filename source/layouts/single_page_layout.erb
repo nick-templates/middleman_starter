@@ -4,23 +4,26 @@
 
 <div class="container-fluid">
 
-  <div class="row">
-	  <div class="col-md-2">
-		<img src="<%= current_page.data.img %>" 
-			alt="<%= current_page.data.img %>" 
-			class="img-responsive img-rounded" />
-
-	  </div>
-	  <div class="col-md-10">
-	      <%= yield %>
-	  </div>
-  </div>
+	<div class="row">
+		<div class="col-md-12">
+			<h2>  <%= current_page.data.title %> </h2>
+			<h4>  <%= current_page.data.date %> | by <%= current_page.data.author %> | </h4>
+			<h4>  Tags: <%= current_page.data.tags %> </h4>
+		</div>
+	</div>
 
 
-  
+	<div class="row">
+  		<div class="col-md-2">
+			<img src="<%= current_page.data.img %>" 
+				alt="<%= current_page.data.alt %>" 
+				class="img-responsive img-rounded" />
 
-
-
+		</div>
+		<div class="col-md-10">
+		  <%= yield %>
+		</div>
+	</div>
 </div><!--/.container-fluid -->
 
 
