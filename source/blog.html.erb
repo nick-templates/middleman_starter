@@ -1,4 +1,5 @@
-<%= partial "partials/navbar" %>
+<%= partial("partials/navbar",  :locals => { :baffle_text => "Blog" }) %>
+
 
 <div class="container-fluid">
 	<% page_articles.each_with_index do |article, i| %>

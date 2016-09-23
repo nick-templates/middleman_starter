@@ -12,8 +12,10 @@
 
        <div style="overflow:hidden; white-space: nowrap;">
             <a class="navbar-brand" href="<%= config[:host_prefix] %>/">
-              <delayed-class delay="2500" addclass="glyphicon glyphicon-tree-deciduous"></delayed-class>
-              <baffle-tag time="1000" delay="0" text="Welcome to Mutant.city!"></baffle-tag>
+              <delayed-class delay="1500" addclass="glyphicon glyphicon-tree-deciduous"></delayed-class>
+              <baffle-tag 
+                text="<%= defined?(baffle_text)  ? baffle_text : "baffle_text undefined" %>">
+              </baffle-tag>
             </a>
         </div>
       </div>

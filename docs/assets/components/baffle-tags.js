@@ -15,6 +15,11 @@
 	    }
 	    return text;
 	}
+
+	To Do:
+	1> Im not sure the timing is working correctly in baffle tag.  I think I need to  test if the variable
+	is defined instead of the simple ||.
+	2> fix the random hash generator to a more dom centric way of getting the node.
 -->
 
 
@@ -27,8 +32,8 @@ Can tinker with the settings using reveal_time and delay_to_reveal -->
 	<script>
 
 	this.uniq_id = randomCSSid(32);
-	this.reveal_time = parseInt(opts.time) || 9000;
-	this.delay_to_reveal= parseInt(opts.delay) || 2000;
+	this.reveal_time = parseInt(opts.time) || 3000;
+	this.delay_to_reveal= parseInt(opts.delay) || 1000;
 	this.style = opts.style
 
 	s=["█","▓","▒","░","█","▓","▒","░","█","▓","▒","░","<",">","/"]

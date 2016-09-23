@@ -1,10 +1,13 @@
----
-pageable: true
-per_page: 10
----
+<%= partial("partials/navbar",  :locals => { :baffle_text => "Aboot" }) %>
 
- <%= partial "partials/navbar" %>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				<img src="/assets/img/nick_n_linus.jpg" class="img-responsive img-rounded">
+			</div>
+			<div class="col-md-10">
 
-<div class="container-fluid">
-This is Aboot.
-</div>
+			<%= partial "pages/aboot" %>
+			</div>
+		</div>
+	</div>

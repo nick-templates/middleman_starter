@@ -49,6 +49,7 @@ end
 
 activate :directory_indexes
 
+
 page "/feed.xml", layout: false
 # page "/articles/*", layout: "single_page_layout"
 

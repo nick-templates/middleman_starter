@@ -1,9 +1,4 @@
----
-pageable: true
-per_page: 10
----
-
- <%= partial "partials/navbar" %>
+<%= partial("partials/navbar",  :locals => { :baffle_text => "Favs" }) %>
 
 <div class="container-fluid">
 This is Favs.

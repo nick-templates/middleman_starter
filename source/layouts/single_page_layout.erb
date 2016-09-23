@@ -1,6 +1,7 @@
 <% wrap_layout :layout do %>
 
-<%= partial "partials/navbar" %>
+<%= partial("partials/navbar",  :locals => { :baffle_text => current_page.data.title }) %>
+
 
 <div class="container-fluid">
 
