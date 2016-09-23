@@ -2,7 +2,7 @@
 title: Hello World
 date: 2016-09-22
 tags: first_entry
-img: /assets/img/johnny_five.jpg
+img: /assets/img/tacos_1.jpg
 alt: Johnny Five Robot
 author: Nick
 
