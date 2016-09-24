@@ -9,6 +9,14 @@
 
 			var mobileContext;
 			var mobileCanvas;
+
+			var proton_settings = {
+				life: 2,
+				radius: {
+					x:6,
+					y:6
+				}
+			}
 			
 			Main();
 			function Main() {
@@ -27,6 +35,9 @@
 				canvas = document.getElementById("particleCanvas");
 				canvas.width = 400;
 				canvas.height = 400;
+				proton_settings.life = 1;
+				proton_settings.radius.x = 5;
+				proton_settings.radius.y = 5;
 
 				//alert(canvas.width + " " + canvas.height)
 				//html5 stuff
@@ -92,13 +103,13 @@
 				//addInitialize
 				emitter.addInitialize(new Proton.Position(new Proton.PointZone(0, 0)));
 				emitter.addInitialize(new Proton.Mass(1));
-				emitter.addInitialize(new Proton.Radius(6, 10));
-				emitter.addInitialize(new Proton.Life(2));
+				emitter.addInitialize(new Proton.Radius(proton_settings.radius.x, proton_settings.radius.y));
+				emitter.addInitialize(new Proton.Life(proton_settings.life));
 				var imagedata = context.getImageData(rect.x, rect.y, rect.width, rect.height);
 				emitter.addInitialize(new Proton.P(new Proton.ImageZone(imagedata, rect.x, rect.y + 50)));
 				//addBehaviour
 
-				randomBehaviour = new Proton.RandomDrift(2, 2, .2);
+				randomBehaviour = new Proton.RandomDrift(1, 1, .2);
 				gravity = new Proton.Gravity(0);
 				emitter.addBehaviour(customScaleBehaviour());
 				emitter.addBehaviour(gravity);
