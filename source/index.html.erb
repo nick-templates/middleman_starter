@@ -1,14 +1,17 @@
 <%= partial("partials/navbar",  :locals => { :baffle_text => "Welcome to Mutant.City!" }) %>
 
-<div class="container-fluid">
 
-
-
-<div id="container">
-	<canvas id="testCanvas"></canvas>
+<div class="container-fluid" style=" border: solid 0px purple; ">
+	<div class="row">
+		<div class="col-md-12">
+			<canvas id="particleCanvas" 
+				style="border:0px solid red; width: 100%; height:auto">
+			</canvas>
+		</div>
+	</div>
 </div>
+
 <script src="/assets/vendor/stats/stats.min.js"></script>
 <script src="/assets/vendor/proton/proton.min.js"></script>
 <script src="/assets/js/proton_script.js"></script>
 
-</div>

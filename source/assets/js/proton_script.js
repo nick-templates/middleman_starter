@@ -3,42 +3,86 @@
 			var proton;
 			var renderer;
 			var emitter;
-			var stats;
 			var index;
 			var randomBehaviour;
 			var gravity;
+
+			var mobileContext;
+			var mobileCanvas;
 			
 			Main();
 			function Main() {
-				canvas = document.getElementById("testCanvas");
-				canvas.width = 1400;
-				canvas.height = 410;
+			
+
+				if(window.innerWidth >= 750){
+				 	loadImage();
+				}
+				else{
+					loadMobileImage();
+				}
+			
+			}
+
+			function loadMobileImage(){
+				canvas = document.getElementById("particleCanvas");
+				canvas.width = 400;
+				canvas.height = 400;
+
+				//alert(canvas.width + " " + canvas.height)
+				//html5 stuff
 				context = canvas.getContext('2d');
-				context.globalCompositeOperation = "lighter";
-				addStats();
+				context.globalCompositeOperation = "lighter";	
 
-				loadImage();
+					// load image
+				var image = new Image();
+
+				image.onload = function(e) {
+					e.target.width = canvas.width
+					e.target.height = canvas.height
+
+					var rect = new Proton.Rectangle( 
+						0, 
+						-50, 
+						e.target.width, 
+						e.target.height);
+					context.drawImage(e.target, rect.x, rect.y);
+					createProton(rect);
+					tick();
+				}
+				image.src = '/assets/img/icons/mutant_city_small_text_2.png';
 			}
 
-			function addStats() {
-				stats = new Stats();
-				stats.setMode(2);
-				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.left = '0px';
-				stats.domElement.style.top = '0px';
-				//document.getElementById('container').appendChild(stats.domElement);
-			}
 
 			function loadImage() {
-				var image = new Image()
+				canvas = document.getElementById("particleCanvas");
+				canvas.width = 1300;
+				canvas.height = 300;
+
+				//alert(canvas.width + " " + canvas.height)
+				//html5 stuff
+				context = canvas.getContext('2d');
+				context.globalCompositeOperation = "lighter";	
+
+					// load image
+				var image = new Image();
+
 				image.onload = function(e) {
-					var rect = new Proton.Rectangle((canvas.width - e.target.width) / 2, (canvas.height - e.target.height) / 2, e.target.width, e.target.height);
+					e.target.width = canvas.width
+					e.target.height = canvas.height
+
+					var rect = new Proton.Rectangle( 
+						0, 
+						-50, 
+						e.target.width, 
+						e.target.height);
 					context.drawImage(e.target, rect.x, rect.y);
 					createProton(rect);
 					tick();
 				}
 				image.src = '/assets/img/icons/mutant_city_text.png';
+
 			}
+
 
 			function createProton(rect) {
 				proton = new Proton;
@@ -107,7 +151,5 @@
 
 			function tick() {
 				requestAnimationFrame(tick);
-				stats.begin();
 				proton.update();
-				stats.end();
 			}

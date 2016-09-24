@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="/assets/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        html,body{height: 100%;}
+        body{border:0px solid black;}
+    </style>
+
   </head>
   <body>
 
@@ -24,7 +29,7 @@
         <img src="assets/img/samuel_catson.jpg"/>
     </noscript>
 
-    <div id="main" role="main">
+    <div id="main" role="main" style="border:solid 0px brown">
         <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -83,18 +88,22 @@
 </nav>
 
 
-<div class="container-fluid">
 
-
-
-<div id="container">
-	<canvas id="testCanvas"></canvas>
+<div class="container-fluid" style=" border: solid 0px purple; ">
+	<div class="row">
+		<div class="col-md-12">
+			<canvas id="particleCanvas" 
+				style="border:0px solid red; width: 100%; height:auto">
+			</canvas>
+		</div>
+	</div>
 </div>
+
 <script src="/assets/vendor/stats/stats.min.js"></script>
 <script src="/assets/vendor/proton/proton.min.js"></script>
 <script src="/assets/js/proton_script.js"></script>
 
-</div>
+
     </div>
 
 
