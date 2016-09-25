@@ -1,3 +1,5 @@
+
+
     <aside>
       <h2>Recent Articles</h2>
       <ol>
@@ -6,7 +8,7 @@
 
       <h2>Tags</h2>
       <ol>
-          <li><a href="/tags/first_entry/">first_entry (1)</a></li>
+          <li><a href="/tags/hello-world/">Hello world (1)</a></li>
       </ol>
 
       <h2>By Year</h2>

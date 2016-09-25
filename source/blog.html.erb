@@ -1,9 +1,5 @@
-<%= partial("partials/navbar",  :locals => { :baffle_text => "Blog" }) %>
-
-
 <div class="container-fluid">
 <h3 style="text-decoration:underline"> Posts </h3>
-
 	<% page_articles.each_with_index do |article, i| %>
 	  <h4>
 	  	<a href="<%=config[:host_prefix]%><%= article.url %>"><%=article.title %></a>

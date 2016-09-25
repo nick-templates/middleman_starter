@@ -12,41 +12,17 @@
 
        <div style="overflow:hidden; white-space: nowrap;">
             <a class="navbar-brand" href="<%= config[:host_prefix] %>/">
-              <delayed-class delay="1500" addclass="glyphicon glyphicon-tree-deciduous"></delayed-class>
-              <baffle-tag 
-                text="<%= defined?(baffle_text)  ? baffle_text : "baffle_text undefined" %>">
-              </baffle-tag>
+              <span class="glyphicon glyphicon-tree-deciduous"></span>
+              <span>Home</span>
             </a>
         </div>
       </div>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="<%= config[:host_prefix] %>/blog">
-            <span class="glyphicon glyphicon-filter"></span>
-            <span>Blog</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="<%= config[:host_prefix] %>/aboot">
+      <ul class="nav navbar-nav navbar-right">        <li>
+        <a href="<%= config[:host_prefix] %>/aboot">
             <span class="glyphicon glyphicon-user"></span>
             <span>Aboot</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="<%= config[:host_prefix] %>/portfolio">
-              <span class="glyphicon glyphicon-fire"></span>
-            <span>Portfolio</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="<%= config[:host_prefix] %>/links">
-            <span class="glyphicon glyphicon-star"></span>
-            <span>Favs</span>
           </a>
         </li>
       </ul>

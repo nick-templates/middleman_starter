@@ -1,17 +1,11 @@
-<%= partial("partials/navbar",  :locals => { :baffle_text => "Welcome to Mutant.City!" }) %>
-
+<%= partial "partials/navbar" %>
 
 <div class="container-fluid" style=" border: solid 0px purple; ">
 	<div class="row">
 		<div class="col-md-12">
-			<canvas id="particleCanvas" 
-				style="border:0px solid red; width: 100%; height:auto">
-			</canvas>
+			This is a middleman template configured with some opinionated conventions like directory indexes and more of a directory structure.... <br/>
+			as well as some standard web dev tools: HTML5, Bootstrap, Jquery, RiotJS, as well as a navbar and some premade stuff to  speed up getting started on projects. <br/>
+			(There's also a semblance of nodejs/package.json/node_modules which needs to be further configured to incorportate browserify and js and css minification into the middleman build process.)  
 		</div>
 	</div>
 </div>
-
-<script src="/assets/vendor/stats/stats.min.js"></script>
-<script src="/assets/vendor/proton/proton.min.js"></script>
-<script src="/assets/js/proton_script.js"></script>
-
