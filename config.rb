@@ -73,5 +73,5 @@ configure :build do
   # blog.sources = "/riot_test/articles/{year}-{month}-{day}-{title}.html"
   # Minify Javascript on build
   # activate :minify_javascript
-  config[:host_prefix] = ""
+  config[:host_prefix] = "/middleman_starter"
 end
